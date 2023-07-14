@@ -1,0 +1,47 @@
+{
+  "name": "nuxt-api-factory",
+  "type": "module",
+  "version": "0.0.3",
+  "description": "Nuxt 3 module designed to streamline API calls by seamlessly setting up the repository design pattern.",
+  "license": "MIT",
+  "repository": "agenordebriat/nuxt-api-factory",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "commit": "gitmoji -c",
+    "dev:build": "nuxi build .playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxt prepare .playground",
+    "dev": "nuxt dev .playground",
+    "lint": "eslint .",
+    "prepack": "nuxt-module-build",
+    "preinstall": "npx only-allow pnpm",
+    "release": "pnpm lint && pnpm prepack && pnpm publish",
+    "taze": "pnpm dlx taze major -I"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.6.3",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
+    "@nuxt/devtools": "latest",
+    "@nuxt/module-builder": "^0.4.0",
+    "@types/node": "^18",
+    "@unocss/eslint-config": "^0.53.5",
+    "@unocss/nuxt": "^0.53.5",
+    "eslint": "^8.45.0",
+    "gitmoji-cli": "^8.4.0",
+    "nuxt": "^3.6.3",
+    "prettier": "^3.0.0"
+  }
+}
