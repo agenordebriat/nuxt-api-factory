@@ -1,6 +1,7 @@
 import { defu } from "defu"
 import { hash } from "ohash"
 import type { Options } from "api-factory"
+import type { FetchError } from "ofetch"
 import type { Ref } from "vue"
 import type { ZodSchema } from "zod"
 import { createError, parseData, useFetch } from "#imports"
@@ -23,7 +24,7 @@ export default class RepositoriesFactory {
     refresh: ReturnType<typeof useFetch>["refresh"]
     execute: ReturnType<typeof useFetch>["execute"]
     status: ReturnType<typeof useFetch>["status"]
-    error: ReturnType<typeof useFetch>["error"]
+    error: Ref<FetchError<any> | null>
   }> {
     const { data, pending, error, ...rest } = await useFetch(
       request,

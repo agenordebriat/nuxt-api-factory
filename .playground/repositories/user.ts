@@ -1,6 +1,6 @@
 import type { Options } from "api-factory"
 import type { z } from "zod"
-import { Users } from "~/schemas/user"
+import { Users } from "schemas/user"
 import { factory as RepositoriesFactory } from "#imports"
 
 export class UserRepository extends RepositoriesFactory {
