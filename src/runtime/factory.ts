@@ -38,7 +38,7 @@ export default class RepositoriesFactory {
     )
 
     if (error.value) {
-      const { statusCode, statusMessage, message, fatal } = errorOptions
+      const { statusCode, statusMessage, message, fatal = true } = errorOptions
       const errorData: typeof errorOptions = error.value
 
       const customError = () => {
@@ -46,7 +46,7 @@ export default class RepositoriesFactory {
           statusCode: statusCode ?? errorData.statusCode,
           statusMessage: statusMessage ?? errorData.statusMessage,
           message: message ?? errorData.message,
-          fatal: fatal ?? true,
+          fatal,
         })
       }
 
