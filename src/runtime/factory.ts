@@ -41,7 +41,7 @@ export default class RepositoriesFactory {
       const { statusCode, statusMessage, message, fatal } = errorOptions
       const errorData: typeof errorOptions = error.value
 
-      const createdError = () => {
+      const customError = () => {
         return createError({
           statusCode: statusCode ?? errorData.statusCode,
           statusMessage: statusMessage ?? errorData.statusMessage,
@@ -50,12 +50,10 @@ export default class RepositoriesFactory {
         })
       }
 
-      if (fatal) throw createdError()
+      if (fatal) throw customError()
 
-      createdError()
+      customError()
     }
-
-    if (options.immediate === false) pending.value = false
 
     return {
       data: schema ? parseData(data, schema) : data,
