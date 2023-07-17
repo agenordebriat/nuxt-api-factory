@@ -8,7 +8,7 @@ import {
 export default defineNuxtModule({
   meta: {
     name: "nuxt-api-factory",
-    compatibility: { nuxt: "^3.0.0" },
+    compatibility: { nuxt: "^3.6.0" },
   },
   async setup(_, nuxt) {
     const { resolve } = createResolver(import.meta.url)
