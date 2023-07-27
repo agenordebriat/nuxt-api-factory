@@ -1,8 +1,8 @@
 {
   "name": "nuxt-api-factory",
   "type": "module",
-  "version": "0.1.1",
-  "description": "Nuxt 3 module designed to streamline API calls by seamlessly setting up the repository design pattern.",
+  "version": "0.2.0",
+  "description": "Nuxt 3 module designed to streamline external API calls by seamlessly setting up the repository design pattern.",
   "license": "MIT",
   "repository": "agenordebriat/nuxt-api-factory",
   "exports": {

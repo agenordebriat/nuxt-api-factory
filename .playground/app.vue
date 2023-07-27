@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useNuxtApp } from "#imports"
+import { useApi } from "#imports"
 
-const { data } = await useNuxtApp().$api.users.getAll()
+const { data } = await useApi("users").getAll()
 
 function getInitials(name: string) {
   return name

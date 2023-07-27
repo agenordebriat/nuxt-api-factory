@@ -19,14 +19,14 @@ export default class RepositoriesFactory {
     description: string,
     { options = {}, errorOptions = {} }: Options = {},
   ): Promise<{
-    data: Ref<S["_output"]>
+    data: Ref<S["_type"]>
     pending: ReturnType<typeof useFetch>["pending"]
     refresh: ReturnType<typeof useFetch>["refresh"]
     execute: ReturnType<typeof useFetch>["execute"]
     status: ReturnType<typeof useFetch>["status"]
     error: Ref<FetchError<any> | null>
   }> {
-    const { data, pending, error, ...rest } = await useFetch(
+    const { data, error, ...rest } = await useFetch(
       request,
       defu(
         {
@@ -57,7 +57,6 @@ export default class RepositoriesFactory {
 
     return {
       data: schema ? parseData(data, schema) : data,
-      pending,
       ...rest,
       error,
     }
